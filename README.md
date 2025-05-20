@@ -176,6 +176,17 @@ To renew [LEADERBOARD.md](LEADERBOARD.md) and summarize results of different mod
 python summarize_results.py
 ```
 
+
+
+## extra notes:
+- this code creates embedding.pt files for each dataset in results dir.
+- this code is designed to downlaod  datasets from huggingface. 
+- it uses utils/retrieval for retrieval part and it uses a simple form of comparison: get_embeddings and run_retrieval .
+ it actually uses simple torch.topk(similarity, k) methods and finds the most similar docs. the retieved and results are also saved in this dir ->             retrieval_path = os.path.join(task_dir, f"retrieved_{query_col}-{'+'.join(task['doc_col'])}.json")
+
+
+
+
 ## Citation
 ```
 @software{Jung_Marqo-FashionCLIP_and_Marqo-FashionSigLIP_2024,
